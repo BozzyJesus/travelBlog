@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../image/interface/favicon.ico" type="image/x-icon">
+    <title>Gallery</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/font-awesome.min.css">
+    <!-- Owl carousel -->
+    <link rel="stylesheet" href="../library/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../library/owlcarousel/assets/owl.theme.green.min.css">
+    <!-- my Css style -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/gallery.css">
+
+</head>
+<body>
+<div id="background-image"></div>
+<div class="header">
+    <div class="banner">
+        <a href="../index.html"><img src="../image/interface/banner.jpg"></a>
+    </div>
+
+    <!-- Social icons -->
+
+    <div>
+        <div class="box">
+            <div>
+                <a href="https://www.facebook.com/cotedazurphoto"
+                   class="btn  btn-block btn-social-icon btn-lg btn-facebook hidden-xs hidden-sm">
+                    <i class="fa fa-facebook fa-lg " aria-hidden="true"></i>
+                </a>
+            </div>
+            <div>
+                <a href="https://www.instagram.com/tanya_travelnotes/"
+                   class="btn  btn-block btn-social-icon btn-lg  btn-instagram hidden-xs hidden-sm">
+                    <i class="fa fa-instagram fa-lg" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div>
+                <a href="http://cotedazurphoto.com"
+                   class="btn  btn-block btn-social-icon btn-lg btn-website hidden-xs hidden-sm">
+                    <i class="fa fa-camera-retro fa-lg" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<div id="mainmenu">
+    <ul>
+        <!-- Пункт меню 1 -->
+        <li class="parent"><a href="#"><i class="fa fa-globe" aria-hidden="true"></i> Страны</a>
+            <ul>
+                <li class="parent"><a href="#">Восточная европа</a>
+                    <ul>
+                        <li><a href="#"> Украина</a></li>
+                        <li><a href="#"> Россия</a></li>
+                        <li><a href="#"> Венгрия</a></li>
+                        <li><a href="#"> Чехия</a></li>
+                        <li><a href="#"> Польша</a></li>
+
+                    </ul>
+                </li>
+                <li class="parent"><a href="#">Западная Европа</a>
+                    <ul>
+                        <li><a href="#"> Франция </a></li>
+                        <li><a href="#"> Монако </a></li>
+                        <li><a href="#"> Австрия </a></li>
+                        <li><a href="#"> Нидерланды </a></li>
+                        <li><a href="#"> Бельгия </a></li>
+                        <li><a href="#"> Швейцария </a></li>
+                        <li><a href="#"> Люксенбург </a></li>
+                        <li><a href="#"> Австрия </a></li>
+                    </ul>
+                </li>
+                <li class="parent"><a href="#">Северная Европа</a>
+                    <ul>
+                        <li><a href="#">Литва</a></li>
+                        <li><a href="#">Новегия</a></li>
+                        <li><a href="#">Исландия</a></li>
+                        <li><a href="#">Шотландия</a></li>
+                        <li><a href="#">Ирландия</a></li>
+                        <li><a href="#">Англия</a></li>
+                        <li><a href="#">Германия</a></li>
+
+                    </ul>
+                </li>
+                <li class="parent"><a href="#">Южная Европа</a>
+                    <ul>
+                        <li><a href="#"> Италия </a></li>
+                        <li><a href="#"> Испания </a></li>
+                        <li><a href="#"> Португалия </a></li>
+                        <li><a href="#"> Ватикан </a></li>
+                    </ul>
+                </li>
+                <li class="parent"><a href="#">Азия</a>
+                    <ul>
+                        <li><a href="#">Непал</a></li>
+                        <li><a href="#">Турция</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <!-- Пункт меню 2 -->
+        <li><a href="gallery.html"><i class="fa fa-picture-o" aria-hidden="true"></i> Галерея</a>
+        <li><a href="aboutMe.html"><i class="fa fa-user" aria-hidden="true"></i> Обо мне</a>
+
+            <!-- Конец списка -->
+</div>
+<!-- Конец блока #mainmenu -->
+<!-- Container (Projects) -->
+<div class="photogallery">
+    <section class="w3-content w3-container w3-padding-64">
+        <h1 class="w3-center">Моя фотогалерея</h1>
+        <p class="w3-center"><em>Нажмите на изображение, чтобы увеличить его</em></p>
+
+        <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+        <div class="w3-row-padding w3-center" appml-data="images">
+
+            <div class="w3-col m4 w3-padding-16" appml-repeat="image">
+                <img src="{{src}}" alt="alt" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity">
+            </div>
+
+        </div>
+    </section>
+    <!-- End Container (Projects) -->
+
+    <!-- Modal for full size images on click-->
+    <div id="modal" class="w3-modal w3-black" onclick="this.style.display='none'">
+        <span class="w3-closebtn w3-hover-red w3-text-white w3-xxxlarge w3-container w3-display-topright">×</span>
+        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+            <img id="img" style="max-width:100%">
+        </div>
+    </div>
+
+</div>
+
+    <!-- Footer -->
+    <footer class="footer" >
+        <div class="footer-bottom"  >
+            <a class="back-to-top" href="#">
+                <i class="fa fa-angel-up"></i>
+            </a>
+            <div class="group">
+                <div id="copyright">
+                    <p>Travel Blog © 2018</p>
+                </div>
+                <div class="credit">
+                    <p> Created by <a href="#">Nick Kushchynsckyi</a></p>
+                </div>
+                <div class="social-button">
+                    <div>
+                        <a href="https://www.facebook.com/cotedazurphoto"
+                           class="btn  btn-block btn-social-icon btn-lg btn-facebook hidden-xs hidden-sm ">
+                            <i class="fa fa-facebook " aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.instagram.com/tanya_travelnotes/"
+                           class="btn  btn-block btn-social-icon btn-lg  btn-instagram hidden-xs hidden-sm">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div>
+                        <a href="http://cotedazurphoto.com"
+                           class="btn  btn-block btn-social-icon btn-lg btn-website hidden-xs hidden-sm">
+                            <i class="fa fa-camera-retro" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <!-- button up -->
+
+    <a href="#" class="scrollup">Наверх</a>
+
+    <!-- bootstrap -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <!-- Owl carousel -->
+    <script src="../library/owlcarousel/owl.carousel.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/gallery.js"></script>
+
+
+</body>
+</html>
